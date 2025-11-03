@@ -1,1 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bans – Register</title>
+    <link rel="icon" href="main.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *{margin:0;padding:0;box-sizing:border-box;}
+        body{font-family:'Inter',sans-serif;background:linear-gradient(135deg,#0a0a1a 0%,#1a0033 50%,#0f0f2e 100%);background-attachment:fixed;color:#e0e0ff;min-height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+        .particles{position:fixed;top:0;left:0;right:0;bottom:0;pointer-events:none;z-index:-1;overflow:hidden;}
+        .particle{position:absolute;width:3px;height:3px;background:rgba(100,140,255,.6);border-radius:50%;box-shadow:0 0 8px rgba(100,140,255,.4);animation:floatUp 18s infinite linear;opacity:0;}
+        .particle::before{content:'';position:absolute;width:100%;height:100%;background:inherit;border-radius:50%;filter:blur(3px);animation:pulse 3s infinite ease-in-out;}
+        @keyframes floatUp{0%{transform:translateY(100vh) translateX(0);opacity:0}10%{opacity:.7}90%{opacity:.7}100%{transform:translateY(-100px) translateX(var(--drift));opacity:0}}
+        @keyframes pulse{0%,100%{transform:scale(1);opacity:.6}50%{transform:scale(1.8);opacity:.3}}
+        .card{background:rgba(15,10,35,.9);border:1px solid rgba(100,80,180,.3);border-radius:20px;width:90%;max-width:420px;padding:40px 30px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,.4);}
+        .logo{width:60px;height:60px;margin:0 auto 20px;background:url('main.ico') center/cover no-repeat;border-radius:50%;}
+        .title{font-size:1.8rem;font-weight:700;margin-bottom:8px;background:linear-gradient(90deg,#6a6aff,#4a90ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+        .subtitle{color:#b0b0e0;margin-bottom:30px;font-size:.95rem;}
+        .form-group{margin-bottom:20px;text-align:left;}
+        .label{display:block;color:#d0d0ff;font-weight:500;margin-bottom:8px;font-size:.9rem;}
+        .input-wrap{position:relative;}
+        .input{width:100%;padding:14px 16px 14px 44px;background:rgba(40,35,70,.6);border:1px solid rgba(120,100,200,.3);border-radius:12px;color:#e0e0ff;font-size:1rem;transition:all .3s;}
+        .input:focus{outline:none;border-color:#6a6aff;box-shadow:0 0 0 3px rgba(106,106,255,.2);background:rgba(50,45,90,.7);}
+        .icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#8888bb;width:18px;height:18px;}
+        .btn{width:100%;padding:16px;background:rgba(50,30,80,.45);color:#d0d0ff;border:1.5px solid rgba(150,150,200,.3);border-radius:14px;font-size:1.1rem;font-weight:600;cursor:pointer;transition:all .4s;display:flex;align-items:center;justify-content:center;gap:10px;margin-top:10px;backdrop-filter:blur(8px);}
+        .btn:hover{background:rgba(70,50,110,.6);border-color:#8a6aff;transform:translateY(-2px);box-shadow:0 10px 25px rgba(106,106,255,.3);color:#fff;}
+        .footer{color:#a0a0d0;font-size:.9rem;margin-top:20px;}
+        .footer a{color:#6a6aff;font-weight:600;text-decoration:none;}
+        .footer a:hover{color:#8a8aff;}
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
 
+    <div class="card">
+        <div class="logo"></div>
+        <h2 class="title">Create Account</h2>
+        <p class="subtitle">Join Bans today</p>
+        <form>
+            <div class="form-group">
+                <label class="label">Username</label>
+                <div class="input-wrap">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                    <input type="text" class="input" placeholder="Choose a username">
+                </div>
+            </div>
+            <div class="form-group">
+                <label class="label">Password</label>
+                <div class="input-wrap">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                    <input type="password" class="input" placeholder="Create a password">
+                </div>
+            </div>
+            <button type="submit" class="btn">Register</button>
+        </form>
+        <div class="footer">Already have an account? <a href="login.html">Sign in</a></div>
+    </div>
+
+    <script>
+        const pc=document.getElementById('particles'),cnt=35;
+        for(let i=0;i<cnt;i++)create();
+        function create(){
+            const p=document.createElement('div');p.className='particle';
+            const x=Math.random()*innerWidth,d=(Math.random()-.5)*200,del=Math.random()*18,dur=15+Math.random()*10;
+            p.style.left=x+'px';p.style.setProperty('--drift',d+'px');
+            p.style.animationDelay='-'+del+'s';p.style.animationDuration=dur+'s';
+            pc.appendChild(p);
+            p.addEventListener('animationend',()=>{p.remove();create();});
+        }
+    </script>
+</body>
+</html>
