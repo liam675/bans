@@ -26,14 +26,13 @@
         .btn{padding:10px 20px;border-radius:10px;font-weight:600;font-size:.9rem;cursor:pointer;transition:all .4s cubic-bezier(.175,.885,.32,1.275);text-decoration:none;display:inline-flex;align-items:center;gap:8px;backdrop-filter:blur(8px);}
         .btn-login,.btn-register{background:rgba(50,30,80,.45);color:#d0d0ff;border:1.5px solid rgba(150,150,200,.3);}
         .btn-login:hover,.btn-register:hover{background:rgba(70,50,110,.6);border-color:#8a6aff;color:#fff;transform:translateY(-2px);box-shadow:0 8px 20px rgba(106,106,255,.25);}
-        .container{max-width:1100px;margin:0 auto;padding:140px 20px 80px;text-align:center;}
+        .container{max-width:900px;margin:0 auto;padding:140px 20px 80px;text-align:center;}
         .header{margin-bottom:40px;}
         .title{font-size:2.8rem;font-weight:800;background:linear-gradient(90deg,#6a6aff,#4a90ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:12px;}
         .subtitle{font-size:1.1rem;color:#b0b0e0;max-width:700px;margin:0 auto;line-height:1.6;}
         .plans{display:flex;justify-content:center;gap:30px;flex-wrap:wrap;margin-top:60px;}
-        .plan{background:rgba(20,15,40,.55);backdrop-filter:blur(12px);border:1px solid rgba(100,100,150,.2);border-radius:20px;padding:30px;width:320px;position:relative;overflow:hidden;transition:transform .4s,box-shadow .4s;}
+        .plan{background:rgba(20,15,40,.55);backdrop-filter:blur(12px);border:1px solid rgba(100,100,150,.2);border-radius:20px;padding:30px;width:340px;position:relative;overflow:hidden;transition:transform .4s,box-shadow .4s;}
         .plan:hover{transform:translateY(-12px);box-shadow:0 20px 40px rgba(106,106,255,.3);}
-        .plan.popular::before{content:'Most Popular';position:absolute;top:12px;right:-40px;background:#6a6aff;color:#fff;padding:4px 40px;font-size:.8rem;transform:rotate(45deg);width:160px;}
         .plan-title{font-size:1.4rem;font-weight:700;margin-bottom:12px;color:#fff;}
         .price{font-size:2.6rem;font-weight:800;background:linear-gradient(90deg,#6a6aff,#4a90ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:8px;}
         .price-sub{font-size:.9rem;color:#a0a0d0;margin-bottom:20px;}
@@ -70,34 +69,17 @@
         </div>
 
         <div class="plans">
-            <!-- PLAN 1 -->
+            <!-- ONLY ONE PLAN -->
             <div class="plan">
                 <h3 class="plan-title">1 Ban</h3>
                 <div class="price">$2</div>
                 <div class="price-sub">one-time purchase</div>
                 <ul class="features">
                     <li>1 instant ban execution</li>
-                    <li>100% UNC & UNC support</li>
-                    <li>Unlimited multi-instance</li>
                     <li>Priority Discord support</li>
                     <li>All core Bans features</li>
                 </ul>
                 <a href="#" class="btn-plan">Get Started Now</a>
-            </div>
-
-            <!-- PLAN 2 (Popular) -->
-            <div class="plan popular">
-                <h3 class="plan-title">5 Bans</h3>
-                <div class="price">$8</div>
-                <div class="price-sub">one-time purchase</div>
-                <ul class="features">
-                    <li>5 instant ban executions</li>
-                    <li>100% UNC & UNC support</li>
-                    <li>Unlimited multi-instance</li>
-                    <li><strong>Faster priority support</strong></li>
-                    <li>All core Bans features</li>
-                </ul>
-                <a href="#" class="btn-plan">Best Value</a>
             </div>
         </div>
 
